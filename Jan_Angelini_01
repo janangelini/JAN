@@ -1,0 +1,65 @@
+int yrect =480;
+void setup(){
+  size(760,800);
+  textSize(12);
+  text("twitter users",420,520);
+}
+  
+  
+void draw(){
+  //rettangoli colorati
+  background(255);
+  noStroke();
+  fill(255,0,255);
+  rect(60,yrect,mouseX,120);
+  fill(0,255,255);
+  rect(mouseX,yrect,720,120);
+  
+  //quadrati bianchi per delimitare il perimetro
+  fill(255);
+  rect(700,yrect,100,120);
+  rect(0,yrect,60,120);
+  
+  //pallini di vario colore
+  for (int i = 80; i < 400; i = i+40) {
+    fill(0,255,255);
+    stroke(0,255,255);
+    strokeWeight(20);
+    smooth();
+    point(i,500);
+  }
+  for (int n = 400; n < 720; n = n+40) {
+    for (int j = 500; j < 580; j = j+40) {
+      stroke(255,0,255);
+      strokeWeight(20);
+      smooth();
+      point(n, j);
+  for (int f = 400; f < 480; f = f+40) {
+      point(f,580);           
+    }
+   }
+  }
+ 
+ //legende varie
+   if ((mouseX > 370) && (mouseX < 392)) {
+    textSize(15);
+    fill(0);
+    textAlign(CENTER);
+    text("numero complessivo studenti",width/2,450);}
+ textAlign(LEFT);
+ textSize(15);
+ fill(0,255,255);
+ text("studententi che non usano twitter",450,580);
+ fill(255,0,255);
+ text("studenti che usano twitter",70,580);
+ stroke(255,0,255);
+ strokeWeight(30);
+ point(80,150);
+ textSize(15);
+ fill(0);
+ text("  = 1 studente che usa twitter",100,155);
+ text("  = 1 studente che non usa twitter",100,235);
+ stroke(0,255,255);
+ point(80,230);
+
+}
